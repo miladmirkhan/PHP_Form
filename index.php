@@ -13,8 +13,11 @@ so (get) use to make, slect(the recourds) the action after clicking
 (name) use to access the inputs in server 
 ps: you should use this in <input> to get input valeo 
 ps: you shoud use only one name for a div
-ps: its better to not use for sensetive information-->
-   <form method="get" action="success.php">
+ps: its better to not use for sensetive information
+-->
+<!-- post method use 
+ -->
+   <form method="post" action="success.php">
    <div class="mb-2" >
     <label for="Firstname" class="form-label">Firstname:</label>
     <input type="text" class="form-control" aria-describedby="emailHelp" name="firstname">
@@ -24,7 +27,7 @@ ps: its better to not use for sensetive information-->
     <input type="text" class="form-control" aria-describedby="emailHelp" name="lastname">
   </div>
   <div class="mb-2">
-    <label for="Lasttname" class="form-label">Date Of Birth:</label>
+    <label for="Lasttname" class="form-label" id="datepicker">Date Of Birth:</label>
     <input type="date" class="form-control" name="date">
   </div>
   <div class="mb-2" id='Spetiality'>
