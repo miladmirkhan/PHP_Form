@@ -2,7 +2,8 @@
 <?php
 $title="Index";
 // require_once it will just require 2 times
-require_once 'includes/header.php';?>
+require_once 'includes/header.php';
+require_once 'DB/conn.php';?>
   </head>
   <body>
    <h1 class="text-center">Hello, welcome to confrance</h1>
