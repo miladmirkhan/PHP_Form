@@ -2,10 +2,29 @@
 <?php
 $title="Success";
 // require_once it will just require 2 times
-require_once 'includes/header.php';?>
+require_once 'includes/header.php';
+require_once 'db/conn.php';
+
+if(isset($_POST['submit'])){
+  $fname=$_POST['fname'];
+  $lname=$_POST['lname'];
+  $dob=$_POST['dob'];
+  $email=$_POST['email'];
+  $contact=$_POST['number'];
+  $specialty=$_POST['specialty'];
+  //Call function to insert and track if success or not
+  $isSuccess=$crud->insert($fname,$lname,$dob,$email,$contact,$specialty);
+
+if($isSuccess){
+  echo '<h1 class="text-center text-success">You Have Been Registered. </h1>';
+
+}else{
+ echo '<h1 class="text-center text-danger">You Have Not Been Registered. </h1>';
+}
+}
+?>
   </head>
   <body>
-<h1 class="text-center text-success">You have been regesterd.</h1>
 <!--  get method
 <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -23,9 +42,9 @@ use to hide the information in search section
 ps: post use for sensetive information, it not show in url -->
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title"><?php echo $_POST['firstname'].' '. $_POST['lastname'];?></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST["Spetiality"];?></h6>
-      <p class="card-text"><?php echo 'your date of Birth: '. $_POST['date']; ?></p>
+      <h5 class="card-title"><?php echo $_POST['fname'].' '. $_POST['lname'];?></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST["specialty"];?></h6>
+      <p class="card-text"><?php echo 'your date of Birth: '. $_POST['dob']; ?></p>
       <p class="card-text"><?php echo 'your Email is: '. $_POST['email']; ?></p>
       <p class="card-text"><?php echo 'your Number is: '. $_POST['number']; ?></p>
      </div>

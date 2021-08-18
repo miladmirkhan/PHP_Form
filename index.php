@@ -21,21 +21,21 @@ ps: its better to not use for sensetive information
    <form method="post" action="success.php">
    <div class="mb-2" >
     <label for="Firstname" class="form-label">Firstname:</label>
-    <input type="text" class="form-control" aria-describedby="emailHelp" name="firstname">
+    <input type="text" class="form-control" aria-describedby="emailHelp" name="fname">
   </div>
   <div class="mb-2" id='lastname' >
     <label for="Lasttname" class="form-label">Lastname:</label>
-    <input type="text" class="form-control" aria-describedby="emailHelp" name="lastname">
+    <input type="text" class="form-control" aria-describedby="emailHelp" name="lname">
   </div>
   <div class="mb-2">
     <label for="Lasttname" class="form-label" id="datepicker">Date Of Birth:</label>
-    <input type="date" class="form-control" name="date">
+    <input type="date" class="form-control" name="dob">
   </div>
   <div class="mb-2" id='Spetiality'>
     <label for="Lasttname" class="form-label">Area of Expertise:</label>
-    <select id="disabledSelect" class="form-select" name="Spetiality">
+    <select id="disabledSelect" class="form-select" name="specialty">
     <option>None</option>
-        <option>Database Admin</option>
+        <option value="3">Database Admin</option>
         <option>Software Developer</option>
         <option>IT Adviser</option>
         <option>More</option>
@@ -62,7 +62,7 @@ ps: its better to not use for sensetive information
   </div>
 
   <div class="d-grid gap-2" id="submit">
-  <button type="submit" class="btn btn-primary" type="button">Submit</button>
+  <button type="submit" class="btn btn-primary" type="button" name="submit">Submit</button>
 </div>
 </form>
   <?php require_once 'includes/footer.php';?>
