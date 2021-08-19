@@ -3,7 +3,10 @@
 $title="Index";
 // require_once it will just require 2 times
 require_once 'includes/header.php';
-require_once 'DB/conn.php';?>
+require_once 'DB/conn.php';
+// for slected specialty
+$results=$crud->getSpecialty();
+?>
   </head>
   <body>
    <h1 class="text-center">Hello, welcome to confrance</h1>
@@ -34,11 +37,12 @@ ps: its better to not use for sensetive information
   <div class="mb-2" id='Spetiality'>
     <label for="Lasttname" class="form-label">Area of Expertise:</label>
     <select id="disabledSelect" class="form-select" name="specialty">
-    <option>None</option>
-        <option value="3">Database Admin</option>
-        <option>Software Developer</option>
-        <option>IT Adviser</option>
-        <option>More</option>
+    <?php 
+    while($r=$results->fetch(PDO::FETCH_ASSOC)){?>
+    <!-- we get id in value  -->
+ <option value="<?php echo $r['name'/* this is in web (view Recourds) */] ?>"> <?php echo $r['name'/* this is in data base  */];?></option>
+ <?php } ?>
+  
         </select>
   </div>
  
